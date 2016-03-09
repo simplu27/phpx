@@ -1,0 +1,7 @@
+# test-php
+
+# Disabling Directory Browsing
+# Options All -Indexes
+
+# Enable directory browsing:
+Options All +Indexes
