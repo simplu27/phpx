@@ -22,7 +22,7 @@ if (isset($produse[$produs_id])) {
 if (!isset($produs)) {
 	// se redirectioneaza spre pagina cu toate produsele
 
-	header('location:http://www.test.dev/produse/');
+	header('location:index.php');
 
 	// inainte sa se printeze ceva in pagina. important!!!
 	exit();
@@ -32,10 +32,10 @@ if (!isset($produs)) {
 
 echo "<pre>";
 	var_dump($produse);
-echo "<pre>";
+echo "</pre>";
 echo "<hr>";
 
 echo "Avem un produs: <br>" . $produs . "<br>";
 
-echo '<a href="/produse/">Toate produsele</a>';
+echo '<a href="index.php">Toate produsele</a>';
 

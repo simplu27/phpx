@@ -1,0 +1,25 @@
+C:\Windows\System32\drivers\etc\hosts
+
+# test-php.dev
+127.0.0.1  test-php.dev
+127.0.0.1  www.test-php.dev
+::1  test-php.dev
+::1  www.test-php.dev
+
+C:\wamp\bin\apache\apache2.4.9\conf\extra\httpd-vhosts.conf
+
+# test-php.dev
+# vhost for testing php 
+# github: test-php
+<VirtualHost *:80>
+    ServerAdmin webmaster@test-php
+    DocumentRoot "F:\Server\GitHub\test-php"
+    ServerName test-php.dev
+    ServerAlias www.test-php.dev
+    <Directory  "F:\Server\GitHub\test-php">
+        AllowOverride All
+        Require local
+    </Directory>
+    ErrorLog "logs/test-php-error.log"
+    CustomLog "logs/test-php-access.log" common
+</VirtualHost>
