@@ -32,3 +32,11 @@ $tablouri[] = array(
 	"img" => "sanziene.jpg",
 	"pret" => 1340
 	);
+
+foreach ($tablouri as $key => $value) {
+	$tablouri[$key]['url'] = url_frumos($value['title']);
+}
+
+// echo "<pre>";
+// 	var_dump($tablouri);
+// echo "</pre>";

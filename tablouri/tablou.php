@@ -18,27 +18,27 @@ include('data.php');
 
 	// tablou.php?name=fetita-in-rosu
 
-		
+if (isset($_GET['name'])) {
+	$get_name = $_GET['name'];
+	if (array_search($get_name, array_column($tablouri, 'url')) !== false) {
+		$key = array_search($get_name, array_column($tablouri, 'url'));
+		$tablou = $tablouri[$key];
+	}
+	if (!$tablou) {
+		header('Location:index.php');
+		exit();
+	}
+} else {
+	header('Location:index.php');
+	exit();
+}
 
-	foreach ($tablouri as $key => $value) {
+	echo "Inapoi la tablouri: <a href='index.php'>Toate Tablourile</a><br>";
+	echo "Title: " . $tablou['title'] . "<br>";
+	echo "Pictor: " . $tablou['autor'] . "<br>";
+	echo "Cod: " . $tablou['cod'] . "<br>";
+	echo "Pret: " . $tablou['pret'] . "<br>";
+	echo "Img: " . $tablou['img'] . "<br>";
+	
 
-		if (isset($_GET['name'])) {
-				$getname = $_GET['name'];
-				// $getname = 'fetita-in-rosu';
-				
-					if (strtolower(str_replace(' ', '-', $value['title'])) == $getname) {
-						$produs = $tablouri[$key];
-						echo "Title: " . $produs['title'] . "<br>";
-						echo "Pictor: " . $produs['autor'] . "<br>";
-						echo "Cod: " . $produs['cod'] . "<br>";
-						echo "Pret: " . $produs['pret'] . "<br>";
-						echo "Img: " . $produs['img'] . "<br>";
-					}//  else {
-					// 	echo "Nu este nici un tablou cu acest nume!";
-					// }
-
-			} // isset($_GET['name'])
-		
-	} //foreach
-
-// echo "Numele tabloului este: " . $tablou['title'];
+// echo "Numele tabloului est e: " . $tablou['title'];

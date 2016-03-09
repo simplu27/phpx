@@ -12,7 +12,10 @@ if (isset($_GET['produs'])) {
 		header('Location:index.php');
 		exit();
 	}
-}
+} else {
+		header('Location:index.php');
+		exit();
+	}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
