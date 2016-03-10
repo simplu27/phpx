@@ -11,6 +11,11 @@ $a = array(
 	'true' => true
 	);
 
+echo "<h2>array_filter()</h2>";
+
+echo "Array initial <br>";
+var_dump($a);
+
 $filtru = array_filter($a);
 
 echo "<pre>";
@@ -27,6 +32,8 @@ array (size=4)
   'true' => boolean true
 */
 
+
+echo "<hr>";
 ////////////////////////////////////////////////////
 
 // If you want a quick way to remove NULL,
@@ -48,3 +55,32 @@ array (size=5)
   'zero' => int 0
   'true' => boolean true
 */
+
+echo "<hr>";
+////////////////////////////////////////////////////
+
+// The array_filter() function filters
+// the values of an array using a callback function.
+
+// Returneaza doar impar
+function test_odd($var) {
+		return($var & 1);
+	}
+
+// Returneaza doar par
+	function test_evan($var) {
+		return(!($var & 1));
+	}
+
+$a1=array("a","b",2,3,4);
+
+echo "Array initial: <br>";
+var_dump($a1);
+
+var_dump(array_filter($a1,"test_odd"));
+// Return Array ( [3] => 3 ) 
+
+echo '<br>';
+
+var_dump(array_filter($a1,"test_evan"));
+// Returneaza Array ( [0] => a [1] => b [2] => 2 [4] => 4 ) 
