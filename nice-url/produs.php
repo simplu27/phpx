@@ -109,14 +109,17 @@ if (isset($_GET['produs'])) {
 
 				// Daca produsul actual nu este primul,
 				// se afiseaza link catre produsul anterior
+				// altfel, nu se afiseaza nimic
 				if ($prod_prev >= 0) {
 					$prev_url = $produse[$prod_prev]['url'];
 					$prev_nume = $produse[$prod_prev]['nume'];
 					echo '<a class="nav-link prev" href="produs.php?produs=' . $prev_url . '">&laquo; ' . $prev_nume . '</a>';
 				} else {
-					echo "Acesta este primul produs!";
+					echo "Nu sunt produse anterioare!";
 				}
 
+				// Daca produsul curent nu este ultimul
+				// Se afiseaza link catre urmatorul produs
 				if ($prod_next < $total_produse) {
 					$next_url = $produse[$prod_next]['url'];
 					$next_nume = $produse[$prod_next]['nume'];
@@ -126,10 +129,12 @@ if (isset($_GET['produs'])) {
 				}
 			 ?>
 		</div>
+
 <code><pre>
 var_dump($produs);
 <?php var_dump($produs);?>
 </pre></code>
+
 </div><!-- wrap -->
 </body></html>
 
