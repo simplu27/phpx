@@ -2,20 +2,64 @@
 // Pagina pentru un singur produs: produs.php
 // Include arrayul cu produse:
 include('lista-produse.php');
+/*
+Model de array din lista-produse.php:
+
+$produse = array();
+$produse[] = array(
+	"nume" => "Produsul Unu",
+	"pret" => 240,
+	"cod" => "p101",
+	"img" => "produs-1.jpg",
+	"url" => 'produsul-unu'
+	);
+*/
+	
+// Verifica daca, in url este setat produsul
+// URL-ul arata asa: produs.php?produs=numele-produsului
 
 if (isset($_GET['produs'])) {
+
+	// Daca este setat, pune-l intr-o variabila
+	// Doar pentru a fi mai usor de lucrat cu el
+
 	$get_produs = $_GET['produs'];
+
+	// array_column: returns the values from a single column in the input array
+	// array_column($array, 'pointer');
+	// returneaza de ex: 'produsul-unu', 'produsul-doi', etc
+
+	// array_search: Searches an array for a given value and returns the key
+	// array_search(ce se cauta, in ce array se cauta)
+	// aici cautam daca $get_produs se afla intr-un array cu url-uri
+	// daca nu este gasit, returneaza false
+
 	if (array_search($get_produs, array_column($produse, 'url')) !== false) {
+
+		// daca a fost gasit, returneaza indexul array-ului in care a fost gasit
+		// de ex: 0, 1, 2, etc
+
 		$key = array_search($get_produs, array_column($produse, 'url'));
+
+		// $produs = $produse['indexul returnat de array_search'];
+
 		$produs = $produse[$key];
+
 	} else {
+
+		// daca $produs nu a fost setat, nu a fost gasit indexul:
+		// redirectioneaza la pagina cu toate produsele
+
 		header('Location:index.php');
+		// paraseste pagina, inainte de a afisa ceva
 		exit();
 	}
+
 } else {
-		header('Location:index.php');
-		exit();
-	}
+	// Daca nu e setat $_GET['produs']:
+	header('Location:index.php');
+	exit();
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +92,12 @@ if (isset($_GET['produs'])) {
 
 		<div class="nav">
 			<?php 
+
+				// Navigare printre produse
+				// Arata produsul anterior sau urmator
+
 				$total_produse = count($produse); // 4
+
 
 				$prod_curent = $key;
 				$prod_prev = $key-1;
@@ -58,6 +107,8 @@ if (isset($_GET['produs'])) {
 				// echo $produse[$prod_prev]['url'] . "<br>";
 				// echo $produse[$prod_next]['url'] . "<br>";
 
+				// Daca produsul actual nu este primul,
+				// se afiseaza link catre produsul anterior
 				if ($prod_prev >= 0) {
 					$prev_url = $produse[$prod_prev]['url'];
 					$prev_nume = $produse[$prod_prev]['nume'];
