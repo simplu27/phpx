@@ -82,7 +82,8 @@ if (isset($_GET['produs'])) {
 
 		<div class="center">
 			<span><a href="index.php">&laquo; Toate produsele</a></span><br>
-			<span>Produs key: <?php echo $key; ?></span>
+			<span>Produs key [Pozitia in array]: <?php echo $key; ?></span><br>
+			<p>Produsul <?php echo $key + 1; ?> din <?php echo count($produse); ?></p>
 		</div>
 
 		<h1><?php echo isset($produs['nume']) ? $produs['nume'] : "Produs"; ?></h1>
