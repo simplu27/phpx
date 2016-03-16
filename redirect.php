@@ -1,0 +1,1 @@
+<h1>Ai fost redirectionat!</h1>
