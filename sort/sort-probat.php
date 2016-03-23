@@ -62,10 +62,10 @@ if (isset($_GET['sort'])) {
 <body>
 
 Sorteaza: 
-<a href="in_array.php?reverse=da">Ordine inversa</a> | 
-<a href="in_array.php?sort=asc">Pret crescator</a> | 
-<a href="in_array.php?sort=des">Pret descrescator</a> | 
-<a href="in_array.php">Ordinea normala</a>
+<a href="sort-probat.php?reverse=da">Ordine inversa</a> | 
+<a href="sort-probat.php?sort=asc">Pret crescator</a> | 
+<a href="sort-probat.php?sort=des">Pret descrescator</a> | 
+<a href="sort-probat.php">Ordinea normala</a>
 
 <?php 
 echo "<h2>$mesaj</h2>";
