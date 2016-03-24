@@ -6,6 +6,7 @@ $produse[] = array("nume" => "Produsul 3", "pret" => 1500, );
 $produse[] = array("nume" => "Produsul 4", "pret" => 0, );
 $produse[] = array("nume" => "Produsul 5", "pret" => -40, );
 $produse[] = array("nume" => "Produsul 6", "pret" => 55.6, );
+$produse[] = array("nume" => "Produsul 9", "pret" => 55, );
 $produse[] = array("nume" => "A Produsul 7", "pret" => 98, );
 $produse[] = array("nume" => "Z Produsul 8", "pret" => 565, );
 echo "Array initial:";
@@ -26,7 +27,7 @@ array_multisort($price_asc, SORT_ASC, $produse);
 echo "Sorteaza pret ascending:";
 echo "<pre>";
 	var_dump($price_asc);
-	var_dump($produse);
+	// var_dump($produse);
 echo "</pre>";
 
 ///////////////////////////////////////////
@@ -75,4 +76,5 @@ array_multisort($nume_asc, SORT_ASC, $produse);
 echo "Sort nume ascending:";
 echo "<pre>";
 	var_dump($nume_asc);
+	var_dump($produse);
 echo "</pre>";
