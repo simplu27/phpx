@@ -11,6 +11,7 @@ $produse[] = array("nume" => "Produsul 45", "pret" => 345, );
 $produse[] = array("nume" => "Amandina 69", "pret" => 2600, );
 $produse[] = array("nume" => "Zelaida 80", "pret" => 808, );
 $produse[] = array("nume" => "Super long product title", "pret" => 33808, );
+$produse[] = array("nume" => "Just string as price", "pret" => 'string', );
 // echo "<pre>"; var_dump($produse); echo "</pre>";
 
 // Verifica daca este in array. Valori posibile acceptate
@@ -108,19 +109,25 @@ Sorteaza:
 <a href="sort-probat.php">Ordinea normala</a>
 
 <?php 
-echo "<h2>$mesaj</h2>";
-echo "<table>";
+echo "<h2>$mesaj</h2>" . "\n";
+echo "<table>" . "\n";
 // echo "<pre>"; var_dump($produse); echo "</pre>"; 
 
 	foreach ($produse as $produs) {
 		$nume = $produs['nume'];
 		$pret = $produs['pret'];
 		// Format number
-		$pret = number_format($pret, 2, ',','.');
-		echo '<tr><td>' . $nume . "</td><td class='pret'>" . $pret . "  Lei <td></tr>";
+		// Verifica daca pret este float or numeric
+		if (is_float($pret) OR is_numeric($pret)) {
+			$pret = number_format($pret, 2, ',','.');
+		} else {
+			// daca e string, nu formata pretul
+			$pret = $produs['pret'];
+		}
+		echo '<tr><td>' . $nume . "</td><td class='pret'>" . $pret . "  Lei <td></tr>" . "\n";
 	}
 
-echo "</table>";
+echo "</table>" . "\n";
 ?>
 </body>
 </html>
