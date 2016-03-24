@@ -1,0 +1,10 @@
+#test php
+
+# /url
+
+RewriteEngine On
+
+# redirect url/index.php to url/file1.php
+
+RewriteRule   ^url/?$  url/file1.php [NC]
+# RewriteRule   ^horses/?$   Xu8JuefAtua.html  [NC]

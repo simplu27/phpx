@@ -1,5 +1,0 @@
-
-# Options +FollowSymLinks
-
-# RewriteEngine On
-# RewriteRule ^([^/]*)\.html$ /?id=$1 [L]
