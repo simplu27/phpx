@@ -81,7 +81,8 @@ if (isset($_GET['produs'])) {
 	<div class="wrap">
 
 		<div class="center">
-			<span><a href="index.php">&laquo; Toate produsele</a></span><br>
+			<!-- <span><a href="index.php">&laquo; Toate produsele</a></span><br> -->
+			<span><a href="/nice-url">&laquo; Toate produsele</a></span><br>
 			<span>Produs key [Pozitia in array]: <?php echo $key; ?></span><br>
 			<p>Produsul <?php echo $key + 1; ?> din <?php echo count($produse); ?></p>
 		</div>
@@ -114,7 +115,8 @@ if (isset($_GET['produs'])) {
 				if ($prod_prev >= 0) {
 					$prev_url = $produse[$prod_prev]['url'];
 					$prev_nume = $produse[$prod_prev]['nume'];
-					echo '<a class="nav-link prev" href="produs.php?produs=' . $prev_url . '">&laquo; ' . $prev_nume . '</a>';
+					// echo '<a class="nav-link prev" href="produs.php?produs=' . $prev_url . '">&laquo; ' . $prev_nume . '</a>';
+					echo '<a class="nav-link prev" href="' . $prev_url . '">&laquo; ' . $prev_nume . '</a>';
 				} else {
 					echo "Nu sunt produse anterioare!";
 				}
@@ -124,7 +126,8 @@ if (isset($_GET['produs'])) {
 				if ($prod_next < $total_produse) {
 					$next_url = $produse[$prod_next]['url'];
 					$next_nume = $produse[$prod_next]['nume'];
-					echo '<a class="nav-link next" href="produs.php?produs=' . $next_url . '">' . $next_nume . ' &raquo;</a>';
+					// echo '<a class="nav-link next" href="produs.php?produs=' . $next_url . '">' . $next_nume . ' &raquo;</a>';
+					echo '<a class="nav-link next" href="' . $next_url . '">' . $next_nume . ' &raquo;</a>';
 				} else {
 					echo "Acesta este ultimul produs!";
 				}

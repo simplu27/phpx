@@ -28,7 +28,8 @@ h3 {margin: 0;} p {margin: 0;} </style>
 			<div class="box">
 				<h3><?php echo $nume_produs; ?></h3>
 				<p>Pret: <?php echo $pret; ?> Lei</p>
-				<a href="produs.php?produs=<?php echo $url; ?>">Detalii produs</a>
+				<!-- <a href="produs.php?produs=<?php echo $url; ?>">Detalii produs</a> -->
+				<a href="produs/<?php echo $url; ?>">Detalii produs</a>
 			</div>
 		<?php } // end foreach
 		?>
