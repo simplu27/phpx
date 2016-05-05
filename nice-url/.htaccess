@@ -4,6 +4,13 @@ RewriteEngine on
 # Rewrite for article.php?id=1&title=Title-Goes-Here
 # RewriteRule ^article/([0-9]+)/([0-9a-zA-Z_-]+)$ article.php?id=$1&title=$2 [NC,L]
 
-# http://test-php.dev/nice-url/produs.php?produs=produsul-unu
+
+# initial: http://test-php.dev/nice-url/produs.php?produs=produsul-unu
+# become: http://test-php.dev/nice-url/produs/produsul-unu
 
 RewriteRule ^produs/([0-9a-zA-Z_-]+)$ produs.php?produs=$1 [NC,L]
+
+# http://test-php.dev/nice-url/unseo-file.php
+# become: http://test-php.dev/nice-url/seo-file
+
+RewriteRule seo-file unseo-file.php
