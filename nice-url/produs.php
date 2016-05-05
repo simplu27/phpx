@@ -34,12 +34,12 @@ if (isset($_GET['produs'])) {
 	// aici cautam daca $get_produs se afla intr-un array cu url-uri
 	// daca nu este gasit, returneaza false
 
-	if (array_search($get_produs, array_column($produse, 'url')) !== false) {
+	if (array_search($get_produs, array_column($produse, 'complex_url')) !== false) {
 
 		// daca a fost gasit, returneaza indexul array-ului in care a fost gasit
 		// de ex: 0, 1, 2, etc
 
-		$key = array_search($get_produs, array_column($produse, 'url'));
+		$key = array_search($get_produs, array_column($produse, 'complex_url'));
 
 		// $produs = $produse['indexul returnat de array_search'];
 
@@ -105,15 +105,15 @@ if (isset($_GET['produs'])) {
 				$prod_prev = $key-1;
 				$prod_next = $key+1;
 
-				// echo $produse[$prod_curent]['url'] . "<br>";
-				// echo $produse[$prod_prev]['url'] . "<br>";
-				// echo $produse[$prod_next]['url'] . "<br>";
+				// echo $produse[$prod_curent]['complex_url'] . "<br>";
+				// echo $produse[$prod_prev]['complex_url'] . "<br>";
+				// echo $produse[$prod_next]['complex_url'] . "<br>";
 
 				// Daca produsul actual nu este primul,
 				// se afiseaza link catre produsul anterior
 				// altfel, nu se afiseaza nimic
 				if ($prod_prev >= 0) {
-					$prev_url = $produse[$prod_prev]['url'];
+					$prev_url = $produse[$prod_prev]['complex_url'];
 					$prev_nume = $produse[$prod_prev]['nume'];
 					// echo '<a class="nav-link prev" href="produs.php?produs=' . $prev_url . '">&laquo; ' . $prev_nume . '</a>';
 					echo '<a class="nav-link prev" href="' . $prev_url . '">&laquo; ' . $prev_nume . '</a>';
@@ -124,7 +124,7 @@ if (isset($_GET['produs'])) {
 				// Daca produsul curent nu este ultimul
 				// Se afiseaza link catre urmatorul produs
 				if ($prod_next < $total_produse) {
-					$next_url = $produse[$prod_next]['url'];
+					$next_url = $produse[$prod_next]['complex_url'];
 					$next_nume = $produse[$prod_next]['nume'];
 					// echo '<a class="nav-link next" href="produs.php?produs=' . $next_url . '">' . $next_nume . ' &raquo;</a>';
 					echo '<a class="nav-link next" href="' . $next_url . '">' . $next_nume . ' &raquo;</a>';

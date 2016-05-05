@@ -20,10 +20,13 @@ h3 {margin: 0;} p {margin: 0;} </style>
 <div class="wrap">
 	<h1>Toate produsele</h1>
 	<?php 
+
+		var_dump($produse);
+
 		foreach ($produse as $key => $produs) {
 			$nume_produs = $produs['nume'];
 			$pret = $produs['pret'];
-			$url = $produs['url'];
+			$url = $produs['complex_url'];
 		?>
 			<div class="box">
 				<h3><?php echo $nume_produs; ?></h3>
