@@ -2,6 +2,7 @@
 RewriteEngine on
 
 # Rewrite for article.php?id=1&title=Title-Goes-Here
+# Become article/1/title-goes-here
 # RewriteRule ^article/([0-9]+)/([0-9a-zA-Z_-]+)$ article.php?id=$1&title=$2 [NC,L]
 
 

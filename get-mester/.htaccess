@@ -1,0 +1,6 @@
+RewriteEngine on
+
+# Transforma
+# index.php?mester=David
+# /mester/David
+RewriteRule ^mester/([0-9a-zA-Z_-]+)$ index.php?mester=$1 [NC,L]

@@ -5,7 +5,8 @@ $produse[] = array(
 	"nume" => "Produsul Unu",
 	"pret" => 240,
 	"cod" => "p101",
-	"img" => "produs-1.jpg"
+	"img" => "produs-1.jpg",
+	"descriere-produs" => "Descrierea produsului unu",
 	);
 $produse[] = array(
 	"nume" => "Produsul Doi",
@@ -17,7 +18,8 @@ $produse[] = array(
 	"nume" => "Produsul Trei",
 	"pret" => 743,
 	"cod" => "p103",
-	"img" => "produs-3.jpg"
+	"img" => "produs-3.jpg",
+	"descriere-produs" => "Descrierea produsului numarul 3. Daca este setata descrierea, nu se mai afiseaza descrierea de proba.",
 	);
 $produse[] = array(
 	"nume" => "Nume lung pentru produsul Patru",
@@ -57,6 +59,24 @@ foreach ($produse as $key => $value) {
 	$produse[$key]['url'] = strtolower(str_replace(" ", "-", $produse[$key]['nume']));
 	// Complex url: foloseste si codul unic in link
 	$produse[$key]['complex_url'] = $produse[$key]['cod'] . "-" . $produse[$key]['url'];
-	// Adauga o descriere, doar de proba
-	$produse[$key]['descriere-produs'] = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo animi consequatur error ab eum eius exercitationem suscipit. Incidunt culpa saepe, a perspiciatis voluptatum laboriosam placeat.';
+
+	// Doar daca nu este setata descrierea pentru fiecare produs un parte
+	// Adauga o descriere de proba
+	// Sau afiseaza un mesaj, ca nu e disponibila descrierea
+	if (!isset($produse[$key]['descriere-produs'])) {
+		$produse[$key]['descriere-produs'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia corporis eos eligendi! Porro facere ipsa libero aliquid adipisci commodi? Voluptates ratione sequi temporibus dolore!";
+	}
 }
+
+// La final, fiecare produs va arata astfel:
+/*
+0 => 
+    array (size=7)
+      'nume' => string 'Produsul Unu' (length=12)
+      'pret' => int 240
+      'cod' => string 'p101' (length=4)
+      'img' => string 'produs-1.jpg' (length=12)
+      'descriere-produs' => string 'Descrierea produsului unu' (length=25)
+      'url' => string 'produsul-unu' (length=12)
+      'complex_url' => string 'p101-produsul-unu' (length=17)
+*/
