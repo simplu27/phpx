@@ -67,6 +67,10 @@ $userdb=Array
         )
 );
 
+echo "<pre>";
+	var_dump($userdb);
+echo "</pre>";
+
 $key = array_search(54, array_column($userdb, 'uid'));
 
 //echo $key; // return 2
@@ -78,3 +82,14 @@ else { echo "Nu a fost gasit!"; }
 // pentru ca '40489' string nu este egal cu 40489 integer
 // Cand este setat true, capitalizarea e importanta
 // $key = array_search(40489, array_column($userdb, 'uid'), true);
+
+$names = array_column($userdb, 'name', 'uid');
+
+echo "<pre>";
+	var_dump($names);
+echo "</pre>";
+
+foreach ($names as $uid => $name) {
+
+	echo $uid . ": " . $name . "<br>";
+}
