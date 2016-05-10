@@ -50,7 +50,7 @@ $produsePage = 'index.php';
 	$url = $produs['url'];
 
 	// Genereaza continutul pentru fiecare produs:
-	$content  = '<h3>'. $nume . '</h3>';
+	$content  = '<h2>'. $nume . '</h2>';
 	$content .= 'Pret: '. $pret . ' Lei' . "<br>";
 	$content .= 'Descriere: '. $descriere . "<br>";
 	$content .= 'Cod: '. $cod . "<br>";

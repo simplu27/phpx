@@ -16,13 +16,16 @@ include('produse.php');
 		box-sizing: border-box;
 	}
 	.center {max-width: 800px; margin: 10px auto;}
-	.box {width: 50%; padding: 10px; margin-bottom: 20px; float: left;}
+	.box {width: 33.33%; padding: 10px; margin-bottom: 20px; float: left;}
 	.h3 {margin: 0 0 5px 0 !important;}
 </style>
 </head>
 <body>
 
 	<div class="center">
+
+		<h1>Toate produsele</h1>
+
 		<?php
 		foreach ($produse as $key => $produs) {
 			$nume = $produs['nume'];
