@@ -1,0 +1,12 @@
+
+# RewriteEngine on
+
+
+# Din: http://test-php.dev/produse2/produs.php?prod=produsul-unu-p001
+# In:  http://test-php.dev/produse2/produs/produsul-unu-p001
+
+# RewriteRule ^produs/([0-9a-zA-z_-]+)$ produs.php?prod=$1
+
+# Trebuie actualizate linkurile in cod:
+# Din: produs.php?prod=link-aici
+# In:  produs/link-aici
