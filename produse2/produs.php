@@ -17,6 +17,8 @@ $produsePage = 'index.php';
 
 		// Verifica daca $prod se afla in $produse:
 
+		// ATENTIE: pentru array_column e nevoie de 5.5 (PHP 5 >= 5.5.0, PHP 7)
+
 		if (array_search($prod, array_column($produse, 'url')) !== FALSE) {
 			// Daca cautarea $prod in $produse nu returneaza FALSE
 			// Aflam indexul in care se afla $prod si in punem in variabila $key
