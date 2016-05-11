@@ -5,7 +5,7 @@ include('produse.php');
 
 // Punem intr-o variabila pagina cu toate produsele
 // Necesar pentru redirectionare si link catre toate produsele
-$produsePage = 'index.php';
+$produsePage = '/produse2/index.php';
 
 // Pagina cu un singur produs: produs.php
 // Linkul catre pagina:
@@ -68,19 +68,32 @@ $produsePage = 'index.php';
 	*, *:before, *:after {
 		box-sizing: border-box;
 	}
-	.center {max-width: 800px; margin: 10px auto;}
+	.center {max-width: 800px; margin: 0 auto; padding: 10px;}
+	a {color: #0071C5; text-decoration: none;}
 
 	.prod-nav {
-		margin: 10px 0;
+		margin: 30px 0;
 	}
 
-	.box {width: 50%; padding: 10px; margin-bottom: 20px; float: left;}
+	.box {width: 100%; padding: 10px; margin-bottom: 20px;}
 	.h3 {margin: 0 0 5px 0 !important;}
+
+	.breadcrumb,
+	.prod-nav {padding: 10px; background: #DFF1FF;}
+	.breadcrumb span {color: #8F8F8F;}
 </style>
 </head>
 <body>
 	
 <div class="center">
+	<p>Pagina pentru un singur produs</p>
+	
+	<div class="breadcrumb">
+		<a href="<?php echo $produsePage; ?>">Toate produsele</a> &raquo; <?php echo $nume; ?>
+		<span>[Produsul <?php echo ($key + 1); ?> din <?php echo count($produse); ?>]</span>
+	</div><!-- breadcrumb -->
+	
+
 	<div class="box">
 		<?php 
 			echo $content . "<br>";
@@ -99,29 +112,33 @@ $produsePage = 'index.php';
 				echo "Prev key is: " . $prevKey . "<br>";
 				echo "Next key is: " . $nextKey . "<br>";
 			?>
-		
-		<div class="prod-nav">
-
-		<?php 
-			// Afiseaza link catre produsul anterior, doar daca produsul curent nu este primul produs din array
-			if ($currentKey >= 1) {
-				$prevUrl = "produs.php?prod=" . $produse[$prevKey]['url'];
-				echo '<a href="' . $prevUrl . '">Produsul anterior</a> | ';
-			}
-		?>
-			<a href="<?php echo $produsePage; ?>">Toate produsele</a>
-
-		<?php 
-			// Afiseaza link catre produsul urmator, doar daca produsul curent nu este ultimul produs din array
-			if ($currentKey < ($totalProduse - 1)) {
-				$nextUrl = "produs.php?prod=" . $produse[$nextKey]['url'];
-				echo ' | <a href="' . $nextUrl . '">Produsul urmator</a>';
-			}
-		?>
-
-		</div><!-- prod-nav -->
-
 	</div><!-- box -->
+
+	<div class="prod-nav">
+
+	<?php 
+		// Afiseaza link catre produsul anterior, doar daca produsul curent nu este primul produs din array
+		if ($currentKey >= 1) {
+			// Inainte de rewrite in htaccess:
+			// $prevUrl = "produs.php?prod=" . $produse[$prevKey]['url'];
+			$prevUrl = $produse[$prevKey]['url'];
+			echo '<a href="' . $prevUrl . '">&laquo; Produsul anterior</a> | ';
+		}
+	?>
+		<a href="<?php echo $produsePage; ?>">Toate produsele</a>
+
+	<?php 
+		// Afiseaza link catre produsul urmator, doar daca produsul curent nu este ultimul produs din array
+		if ($currentKey < ($totalProduse - 1)) {
+			// Inainte de htaccess:
+			// $nextUrl = "produs.php?prod=" . $produse[$nextKey]['url'];
+			$nextUrl = $produse[$nextKey]['url'];
+			echo ' | <a href="' . $nextUrl . '">Produsul urmator &raquo;</a>';
+		}
+	?>
+
+	</div><!-- prod-nav -->
+
 </div><!-- center -->
 	
 </body>
