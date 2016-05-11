@@ -5,7 +5,9 @@ include('produse.php');
 
 // Punem intr-o variabila pagina cu toate produsele
 // Necesar pentru redirectionare si link catre toate produsele
-$produsePage = '/produse2/index.php';
+// Deoarece in htaccess se creeaza un folder "produs", e nevoie de un pas inapoi
+// pentru toate produsele
+$produsePage = '../index.php';
 
 // Pagina cu un singur produs: produs.php
 // Linkul catre pagina:
@@ -51,6 +53,8 @@ $produsePage = '/produse2/index.php';
 	$descriere = $produs['descriere'];
 	$url = $produs['url'];
 
+	$metaDescription = $nume . " Pret: " . $pret . " Lei " . $descriere;
+
 	// Genereaza continutul pentru fiecare produs:
 	$content  = '<h2>'. $nume . '</h2>';
 	$content .= 'Pret: '. $pret . ' Lei' . "<br>";
@@ -62,31 +66,34 @@ $produsePage = '/produse2/index.php';
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title><?php echo $nume ?></title>
+<title><?php echo $nume; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="<?php echo isset($metaDescription) ? $metaDescription : "No description"; ?>">
 <style>
 	*, *:before, *:after {
 		box-sizing: border-box;
+		margin: 0;
 	}
-	.center {max-width: 800px; margin: 0 auto; padding: 10px;}
+	.center {max-width: 680px; margin: 0 auto; padding: 10px;}
 	a {color: #0071C5; text-decoration: none;}
 
 	.prod-nav {
-		margin: 30px 0;
+		margin: 10px 0;
 	}
 
-	.box {width: 100%; padding: 10px; margin-bottom: 20px;}
-	.h3 {margin: 0 0 5px 0 !important;}
+	.box {width: 100%; padding: 10px; margin-bottom: 10px;}
+	h2 {margin: 0 0 15px 0 !important;}
 
 	.breadcrumb,
 	.prod-nav {padding: 10px; background: #DFF1FF;}
 	.breadcrumb span {color: #8F8F8F;}
+	.info {margin: 5px 0 10px;}
 </style>
 </head>
 <body>
 	
 <div class="center">
-	<p>Pagina pentru un singur produs</p>
+	<p class="info">Pagina pentru un singur produs</p>
 	
 	<div class="breadcrumb">
 		<a href="<?php echo $produsePage; ?>">Toate produsele</a> &raquo; <?php echo $nume; ?>

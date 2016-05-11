@@ -40,6 +40,26 @@ $produse[] = array(
 	'descriere' => 'Descriere pentru Produsul Cinci',
 );
 
+$produse[] = array(
+	'cod' => 'p006',
+	'nume' => 'Super Name for Product Six',
+	'pret' => 1325,
+	'descriere' => 'Nice description for Product Number Six',
+);
+
+$produse[] = array(
+	'cod' => 'p007',
+	'nume' => 'James Bond Product',
+	'pret' => 345.6,
+	'descriere' => 'James bond is 007 product in this array',
+);
+
+// Genereaza 'url' din "nume" si "cod" combinate:
+// Returneaza: produsul-unu-p001
 foreach ($produse as $key => $value) {
+	// Transforma in litere mici
+	// Inlocuieste spatiile cu '-', apoi adauga codul produsului
 	$produse[$key]['url'] = strtolower(str_replace(' ', '-', $produse[$key]['nume'])) . "-" . $produse[$key]['cod'];
-}
+	// Se adauga la fiecare produs o valoare noua in array:
+	// 'url' => 'produsul-unu-p001'
+} // end foreach
