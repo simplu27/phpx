@@ -14,6 +14,7 @@ include('produse.php');
 <style>
 	*, *:before, *:after {
 		box-sizing: border-box;
+		margin: 0;
 	}
 	.center {max-width: 800px; margin: 10px auto;}
 	.box {width: 33.33%; padding: 10px; margin-bottom: 20px; float: left;}
@@ -33,24 +34,22 @@ include('produse.php');
 			$cod = $produs['cod'];
 			$descriere = $produs['descriere'];
 			$url = $produs['url'];
+			?>
 
-			// Genereaza continutul pentru fiecare produs:
-			$content = '<div class="box">';
-			$content .= '<h3>'. $nume . '</h3>';
-			$content .= 'Pret: '. $pret . ' Lei' . "<br>";
-			$content .= 'Descriere: '. $descriere . "<br>";
-			$content .= 'Cod: '. $cod . "<br>";
-			$content .= 'Url: '. $url . "<br>";
+		<div class="box">
+			<h3><?php echo $nume; ?></h3>
+			<p>Pret: <?php echo $pret; ?> Lei</p>
+			<p>Descriere: <?php echo $descriere; ?></p>
+			<p>Cod produs: <?php echo $cod; ?></p>
+			<p>URL produs: <?php echo $url; ?></p>
+			<!-- produs.php?prod=link-here
+			<a href="produs/link-here">Detalii</a> -->
+			<a href="produs/<?php echo $url; ?>">Detalii</a>
+		</div><!-- box -->
 
-			// Inainte de RewriteRule in .htaccess: produs.php?prod=link-here
-			// $content .= '<a href="'. 'produs.php?prod='. $url .'">Detalii</a>' . "<br>";
-			// Dupa rewrite: produs/link-here
-			$content .= '<a href="'. 'produs/'. $url .'">Detalii</a>' . "<br>";
-			$content .= '</div>';
-
-			// Afiseaza produsele:
-			echo $content;
-		} ?>
+		<?php } // end foreach
+		 ?>
+		
 	</div><!-- center -->
 
 </body>
