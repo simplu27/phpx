@@ -41,9 +41,9 @@ include('produse.php');
 			$content .= 'Descriere: '. $descriere . "<br>";
 			$content .= 'Cod: '. $cod . "<br>";
 			$content .= 'Url: '. $url . "<br>";
+
 			// Inainte de RewriteRule in .htaccess: produs.php?prod=link-here
 			// $content .= '<a href="'. 'produs.php?prod='. $url .'">Detalii</a>' . "<br>";
-
 			// Dupa rewrite: produs/link-here
 			$content .= '<a href="'. 'produs/'. $url .'">Detalii</a>' . "<br>";
 			$content .= '</div>';
@@ -55,4 +55,3 @@ include('produse.php');
 
 </body>
 </html>
-
