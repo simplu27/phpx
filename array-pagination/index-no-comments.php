@@ -1,35 +1,17 @@
 <?php
 include_once('data.php');
-// array(
-// 	"id"=>1,
-// 	"name"=>"Mia",
-// 	"data"=>"a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum",
-// 	"price"=>981
-// 	)
 $total = count($data); // return 100
 $limit = 8; // cat se arata
 $page = ''; // pagina
+$pages = ceil($total / $limit);
 
-// Afla numarul total de pagini:
-// ceil() rotunjeste numarul de pagini
-$pages = ceil($total / $limit); // returneaza 10 pagini
-
-	// daca e setat numarul paginii, daca este mai mic decat numarul total de pagini
-	// si daca este un numar, se preia numarul paginii [$page]
 	if (isset($_GET['page']) && $_GET['page'] <= $pages && $_GET['page'] >=1 && is_numeric($_GET['page'])) {
 		$page = $_GET['page'];
 	} else {
-		// Daca nu sunt indeplinite conditiile de mai sus, seteaza pagina 1	
 		$page = 1;
 	}
 
-// Aflam de la cat se pleaca, in functie de numarul paginii:
-// Ex: Pag 1 * 10 per pag - 10 = 0 [pentru prima pagina]
-// Ex: Pag 2 * 10 per pag - 10 = 10 [pentru pagina 2]
 $current_start = ($page * $limit) - $limit ;
-
-// array_slice($array cu date, cu ce se incepe, cate se arata pe pagina, daca se pastreaza indexul)
-// TRUE pastreaza indexul fiecarui array
 $online = array_slice($data, $current_start, $limit, TRUE);
 
 ?><!DOCTYPE html>
@@ -76,16 +58,12 @@ $online = array_slice($data, $current_start, $limit, TRUE);
 
 	<div class="paginare">
 		<?php 
-			// Aflam linkul catre pagina anterioara,
-			// in functie de pagina curenta [$page] si nr. total de pagini [$pages]
 			if ($page > 1 && $page <= $pages) {
 				$prev_page = $page - 1;
 			} else {
-				// Daca ne aflam pe pag 1, trimitem catre ultima pagina
 				$prev_page = $pages;
 			}
 
-			// Aflam linkul catre pagina urmatoare:
 			if ($page == $pages) {
 				$next_page = 1;
 			} else {
@@ -96,9 +74,6 @@ $online = array_slice($data, $current_start, $limit, TRUE);
 		<a href="index.php?page=<?php echo $prev_page; ?>" class="prev">Prev</a>
 
 		<?php 
-			// Generare linkuri catre pagini:
-			// Total pagini:
-			// $pages = ceil($total / $limit);
 			for ($i=1; $i <= $pages ; $i++) { 
 				if ($i == $page) {
 					echo '<a class="current-page" href="index.php?page='. $i .'">'. $i .'</a>' . "&nbsp";
