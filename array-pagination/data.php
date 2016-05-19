@@ -100,5 +100,14 @@ $data = array(
 	array("id"=>97,"name"=>"Cheryl","data"=>"ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a","price"=>733),
 	array("id"=>98,"name"=>"Shelley","data"=>"mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum","price"=>661),
 	array("id"=>99,"name"=>"Hilary","data"=>"et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis.","price"=>850),
-	array("id"=>100,"name"=>"Nina","data"=>"mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum","price"=>963)
+	array("id"=>100,"name"=>"Nina Fofilina","data"=>"mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum","price"=>963)
 );
+
+// Pentru fiecare produs, adaugam o rubrica 'url'
+// 'url' => 'chloe-59';
+// Acesta este obtinut din combinatia numelui si id
+foreach ($data as $index => $value) {
+	// Numele este trasformat in litere mici
+	// Iar spatiile din nume in '-';
+	$data[$index]['url'] = strtolower(str_replace(' ', '-', $data[$index]['name'])) . '-' . $data[$index]['id'];
+}

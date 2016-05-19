@@ -68,13 +68,15 @@ $online = array_slice($data, $current_start, $limit, TRUE);
 			$id = $data[$key]['id'];
 			$nume = $data[$key]['name'];
 			$pret = $data[$key]['price'];
-
+			$url = $data[$key]['url'];
 			?>
 
 		<div class="box">
 			<p>Key: <?php echo $key; ?> Id: <?php echo $id; ?></p>
 			<p>Nume: <?php echo $nume; ?></p>
 			<p>Pret: <?php echo $pret; ?> $</p>
+			<p>Url: <?php echo $url; ?></p>
+			<p><a href="single/index.php?prod=<?php echo $url; ?>">Detalii</a></p>
 		</div>
 
 		<?php
