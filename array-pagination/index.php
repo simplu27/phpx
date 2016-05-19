@@ -7,6 +7,19 @@ include_once('data.php');
 // 	"data"=>"Aliquet vel, vulputate eu, odio.",
 // 	"price"=>981
 // 	)
+
+// Sorteaza pret ascendent [de la cel mai mic, spre cel mai mare]
+function sorteaza_pret_ascendent($a, $b){
+	$sorteaza = 'price';
+	if ($a[$sorteaza] == $b[$sorteaza]) {return 0;}
+	// primul pret < urmatorul pret
+	return ($a[$sorteaza] < $b[$sorteaza]) ? -1 : 1;
+}
+
+// uasort pastreaza indexul fiecarui array
+usort($data, 'sorteaza_pret_ascendent');
+
+
 $total = count($data); // aflam numarut total al produselor. returneaza 100
 $limit = 8; // cate produse se arata pe pagina
 
