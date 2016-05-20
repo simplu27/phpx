@@ -8,18 +8,6 @@ include_once('data.php');
 // 	"price"=>981
 // 	)
 
-// Sorteaza pret ascendent [de la cel mai mic, spre cel mai mare]
-function sorteaza_pret_ascendent($a, $b){
-	$sorteaza = 'price';
-	if ($a[$sorteaza] == $b[$sorteaza]) {return 0;}
-	// primul pret < urmatorul pret
-	return ($a[$sorteaza] < $b[$sorteaza]) ? -1 : 1;
-}
-
-// uasort pastreaza indexul fiecarui array
-usort($data, 'sorteaza_pret_ascendent');
-
-
 $total = count($data); // aflam numarut total al produselor. returneaza 100
 $limit = 8; // cate produse se arata pe pagina
 
@@ -65,14 +53,14 @@ $online = array_slice($data, $current_start, $limit, TRUE);
 <body>
 <div class="center">
 
-	<h2>Array pagination</h2>
+	<h1>Array pagination</h1>
 	<br>
 	<?php
 		// Detalii, doar pentru testare:
 		// Pagina: 12 din 13
-		echo "Pagina: " . $page . " din " . $pages . "<br>"; 
+		echo "<span>Pagina: " . $page . " din " . $pages . "</span><br>"; 
 		// Total items: 100. Se afiseaza [maxim] 8 items per pagina
-		echo "Total items: " . $total . ". Se afiseaza [maxim] " . $limit . " items per pagina <br>";
+		echo "<span>Total items: " . $total . ". Se afiseaza [maxim] " . $limit . " items per pagina </span><br>";
 		echo "<br>";
 
 		// Afisam detalii despre produse:
@@ -89,7 +77,7 @@ $online = array_slice($data, $current_start, $limit, TRUE);
 			<p>Nume: <?php echo $nume; ?></p>
 			<p>Pret: <?php echo $pret; ?> $</p>
 			<p>Url: <?php echo $url; ?></p>
-			<p><a href="single/index.php?prod=<?php echo $url; ?>">Detalii</a></p>
+			<p><a class="button" href="single/index.php?prod=<?php echo $url; ?>">Detalii</a></p>
 		</div>
 
 		<?php

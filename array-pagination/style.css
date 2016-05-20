@@ -1,9 +1,64 @@
-*, *:before, *:after {box-sizing: border-box; margin: 0; padding: 0; }
-	.clearfix, .clearfix:before, .clearfix:after {clear: both; overflow: hidden; }
+*, *:before, *:after {
+		box-sizing: border-box;
+		margin: 0; padding: 0;
+	}
+
+	.clearfix,
+	.clearfix:before,
+	.clearfix:after {
+		clear: both;
+		overflow: hidden;
+	}
+
+	body {
+		color: #4F4545;
+	}
 	.center {max-width: 800px; margin: 20px auto; padding: 10px 20px; }
+
 	.box {width: 25%; float: left; /*margin: 10px 2%;*/ padding: 10px; }
+
 	@media screen and (max-width: 480px) {.box {width: 50%;} } /* 480px media end */
+
 	.paginare {margin-top: 30px; margin-bottom: 20px;}
-	.paginare a {background: #EFEFEF; border: 1px solid #DFDFDF; margin: 4px 2px;
-		padding: 3px 7px; text-decoration: none; display: inline-block; border-radius: 4px; }
-	a.current-page, .paginare a:hover {background: #5F5F5F; color: #F9F9F9;}
+
+	.paginare a {
+		background: #EFEFEF;
+		margin: 4px 2px;
+		padding: 6px 10px;
+		text-decoration: none;
+		display: inline-block;
+		border-radius: 4px;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: #343434;
+	}
+
+	a.current-page,
+	.paginare a:hover {
+		background: #6F6868;
+		color: #F9F9F9;
+	}
+
+	.center span {
+		color: #989898;
+	}
+
+	hr {color: #DFDFDF;}
+
+	a.button {
+		display: inline-block;
+		text-decoration: none;
+		background: #EFEFEF;
+		padding: 4px 12px;
+		margin-top: 6px;
+		margin-bottom: 6px;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: #343434;
+		border-radius: 4px;
+	}
+
+	a.button:hover {
+		background: #6F6868;
+		color: #F9F9F9;
+	}

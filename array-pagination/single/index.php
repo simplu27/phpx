@@ -55,7 +55,9 @@ $prod_url = $produs['url'];
 </head>
 <body>
 <div class="center">
-	<span><a href="javascript:history.go(-1)" title="Pagina anterioara">&laquo; Inapoi</a></span><br><br>
+	<span><a href="javascript:history.go(-1)" title="Pagina anterioara">&laquo; Inapoi</a></span><br>
+	<span>Referer: <?php echo (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : '' ?></span><br><br>
+	<hr><br>
 	<h1><?php echo $prod_nume; ?></h1>
 	<p>Produs id: <?php echo $prod_id; ?></p>
 	<p>Pret: <?php echo $prod_pret; ?> Lei</p>
