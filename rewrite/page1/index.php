@@ -1,0 +1,1 @@
+This is a subpage: rewrite/page1/index.php

@@ -124,7 +124,7 @@ span.error {color: #F00; }
 		</div>
 		<br>
 		<label for="favFruit">My favorite fruit</label>
-		<select id="favFruit" name="favFruit[]" size="4" multiple>
+		<select id="favFruit" name="favFruit[]" size="2" multiple>
 			<?php
 			$options = array("apple", "banana", "plum", "pomegranate",
 				"strawberry", "watermelon");

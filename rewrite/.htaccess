@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Daca exista un director cu acelasi nume, afiseaza directorul
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Remove .php extension from file
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
