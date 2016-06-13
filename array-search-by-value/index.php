@@ -10,7 +10,8 @@ $data[] = array("url" => 'item-patru', "pret" => 578, );
 
 $cauta = 'item-unu';
 $key = array_search($cauta, array_column($data, 'url'));
-echo $key;
+echo "S-a cautat termenul: " . $cauta . ". A fost gasit si are indexul: " . $key;
+echo "<br>";
 
 $cahle = array();
 
@@ -39,7 +40,7 @@ foreach ($cahle as $key => $value) {
 
 $cauta = 'verde-bizantin';
 $key = array_search($cauta, array_column($cahle, 'url'));
-echo "<br>" . $key;
+echo "S-a cautat termenul: " . $cauta . ". A fost gasit si are indexul: " . $key;
 
 echo "<pre>";
 	var_dump($cahle);

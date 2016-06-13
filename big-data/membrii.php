@@ -1,7 +1,17 @@
 <?php
 
 $membrii = array(
-	array("id"=>100,"nume"=>"Marny Miller","email"=>"lobortis.mauris.Suspendisse@vulputate.ca","tel"=>"0201-375935","inscris"=>"18/12/2010","bio"=>"faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam vitae diam. Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet,","cnp"=>"1648061957699","donat"=>412,"tara"=>"Turkey"),
+	array(
+		"id"=>100,
+		"nume"=>"Marny Miller",
+		"email"=>"lobortis.mauris.Suspendisse@vulputate.ca",
+		"tel"=>"0201-375935",
+		"inscris"=>"18/12/2010",
+		"bio"=>"faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia.",
+		"cnp"=>"1648061957699",
+		"donat"=>412,
+		"tara"=>"Turkey"
+		),
 	array("id"=>101,"nume"=>"Portia Copeland","email"=>"lacinia@ligulaNullam.ca","tel"=>"0945-086523","inscris"=>"20/03/2005","bio"=>"eros turpis non enim. Mauris quis","cnp"=>"1661091719499","donat"=>653,"tara"=>"Malta"),
 	array("id"=>102,"nume"=>"Deirdre Walter","email"=>"sollicitudin.orci@Inmipede.edu","tel"=>"0538-839965","inscris"=>"09/02/2003","bio"=>"eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum","cnp"=>"1603090103999","donat"=>578,"tara"=>"Curaçao"),
 	array("id"=>103,"nume"=>"Martha Gray","email"=>"placerat.Cras@ultriciesdignissim.edu","tel"=>"0586-989788","inscris"=>"21/06/2011","bio"=>"magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit","cnp"=>"1686072577999","donat"=>768,"tara"=>"Grenada"),

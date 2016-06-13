@@ -22,9 +22,10 @@ require_once 'autoload.php';
 // alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
 
 // use the factory to create a Faker\Generator instance
-$faker = Faker\Factory::create('ro_RO');
+// $faker = Faker\Factory::create('ro_RO');
+$faker = Faker\Factory::create();
 
-for ($i=0; $i < 3 ; $i++) { 
+for ($i=0; $i < 10 ; $i++) { 
 	// generate data by accessing properties
 	echo "Name: " . $faker->name($prefix=NULL);
 	  // 'Lucy Cechtelar';
@@ -40,14 +41,18 @@ for ($i=0; $i < 3 ; $i++) {
 	  // sit minima sint.
 	echo "<br>";
 	echo "Company: " . $faker->company;
+	echo "<br>";
+	echo "E-mail: " . $faker->email;
+	echo "<br>";
+	echo "Phone: " . $faker->phoneNumber;
 
 	echo "<br>";
-	echo "CNP: " . $faker->cnp;
+	// echo "CNP: " . $faker->cnp;
 
 	echo "<hr>";
 }
 
-for ($i = 0; $i < 20; $i++)
+for ($i = 0; $i < 2; $i++)
 {
   $users[$i] = array(
     'username' => $faker->userName,
