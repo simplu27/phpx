@@ -22,6 +22,27 @@ echo "</pre>";
 
 echo "<hr>";
 
+// http://stackoverflow.com/questions/7121479/listing-all-the-folders-subfolders-and-files-in-a-directory-using-php
+
+function listFolderFiles($myfolder){
+    $ffs = scandir($myfolder);
+    echo '<ul>';
+    foreach($ffs as $ff){
+        if($ff != '.' && $ff != '..') {
+            echo '<li>'.$ff;
+            if(is_dir($myfolder.'/'.$ff)) listFolderFiles($myfolder.'/'.$ff);
+            echo '</li>';
+        }
+    }
+    echo '</ul>';
+}
+
+listFolderFiles(dirname('.'));
+
+
+
+echo "<hr>";
+
 
 // http://stackoverflow.com/questions/24783862/list-all-the-files-and-folders-in-a-directory-with-php-recursive-function
 
@@ -42,7 +63,7 @@ function getDirContents($dir, &$results = array()){
     return $results;
 }
 
-$scaneaza = getDirContents('F:/-= Tutoriale =-/-= TeamTreehouse =-/');
+$scaneaza = getDirContents('.');
 
 foreach ($scaneaza as $xxx) {
 	if (is_dir($xxx)) {
