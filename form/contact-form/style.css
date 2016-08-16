@@ -1,0 +1,41 @@
+
+body {
+	color: #333;
+}
+
+.center {
+	max-width: 400px;
+	margin: 20px auto;
+}
+
+.form-fild {
+	margin: 0 0 10px;
+}
+
+label, 
+input {display: block;}
+
+label {padding: 5px 0 4px 0;}
+
+input,
+textarea {
+	width: 100%;
+	line-height: 20px;
+	font-size: 14px;
+	margin-top: 3px;
+	padding: 2px 10px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+
+input#formSubmit {
+	max-width: 200px;
+	display: inline-block;
+	margin: 20px auto;
+	text-align: center;
+}
+
+span.error {
+	font-size: 12px;
+	color: red;
+}

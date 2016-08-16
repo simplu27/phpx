@@ -40,18 +40,22 @@
 	</form>
 
 	<?php
-		if (isset($_POST['submit'])) {
-			echo "<h2>Your Input:</h2>";
-			echo $name;
-			echo "<br>";
-			echo $email;
-			echo "<br>";
-			echo $website;
-			echo "<br>";
-			echo $comment;
-			echo "<br>";
-			echo $gender;
-		}
+		// if (isset($_POST['submit'])) {
+		// 	echo "<h2>Your Input:</h2>";
+		// 	echo $name;
+		// 	echo "<br>";
+		// 	echo $email;
+		// 	echo "<br>";
+		// 	echo $website;
+		// 	echo "<br>";
+		// 	echo $comment;
+		// 	echo "<br>";
+		// 	echo $gender;
+		// }
+
+	echo "<pre>";
+		var_dump($_POST);
+	echo "</pre>";
 	?>
 
 </body>
