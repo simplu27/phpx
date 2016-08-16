@@ -77,9 +77,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Daca nu este nici o eroare, se poate trimite mailul
 	// Altfel, se intoarce la formular
 	if (empty($numeErr) && empty($telefonErr) && empty($emailErr) && empty($mesajErr)) {
-		echo "<h2>Mesajul a fost trimis trimis</h2>";
+		// echo "<h2>Mesajul a fost trimis trimis</h2>";
 		// curata campurile completate
-		$_POST = array();
+		// $_POST = array();
+
+		// sau redirectioneaza spre pagina cu mesajul de succes
+		header('Location: success.php');
+		exit();
+
 	} else {
 		echo "<h2>Contact Form 2016</h2>";
 	}
