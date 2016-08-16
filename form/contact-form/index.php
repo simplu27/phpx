@@ -24,6 +24,8 @@ $numeErr = $emailErr = $telefonErr = $mesajErr = $hiddenErr = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+	// daca campul ascun este completat, redirectioneaza
+	// doar pentru roboti
 	if (!empty($_POST['hidden'])) {
 		header('Location: http://www.google.ro');
 		exit();
@@ -74,9 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$mesaj = test_input($_POST['mesaj']);
 	}
 
-	// Daca nu este nici o eroare, se poate trimite mailul
-	// Altfel, se intoarce la formular
 	if (empty($numeErr) && empty($telefonErr) && empty($emailErr) && empty($mesajErr)) {
+		// Daca nu este nici o eroare, se poate trimite mailul
+		// Altfel, se intoarce la formular
 		// echo "<h2>Mesajul a fost trimis trimis</h2>";
 		// curata campurile completate
 		// $_POST = array();

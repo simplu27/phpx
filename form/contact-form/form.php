@@ -1,7 +1,7 @@
 <form id="contactForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
 	<!-- Hidden fild: Just for robots -->
-	<div class="form-fild" class="hidden">
+	<div class="form-fild" class="hidden" style="display: none;">
 		<label for="hidden">Hidden: <span class="error">* <?php echo $hiddenErr;?></span>
 			<input type="text" name="hidden" id="formHidden" value="">
 		</label>
