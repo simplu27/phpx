@@ -11,7 +11,7 @@ include_once('csv-functions.php');
 // Testeaza generarea de tabel din fisier .csv
 
 // tableFromCsv(filename, daca are titlu, ce separator foloseste)
-// echo tableFromCsv($filename1, $title = true, $separator = '|');
+echo tableFromCsv($filename1, $title = true, $separator = '|');
 
 // Testeaza csv to array
 
