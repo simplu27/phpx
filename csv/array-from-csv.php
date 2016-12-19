@@ -18,22 +18,22 @@ $table = extractCsv($filename, true, ",");
 <link rel="stylesheet" media="screen" href="style.css">
 </head>
 <body>
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Email</th>
-		<th>Email</th>
-		<th>Date</th>
-	</tr>
-	<?php foreach ($table as $row) { ?>
-	<tr>
-		<td><?php echo $row['id']; ?></td>
-		<td><?php echo $row['name']; ?></td>
-		<td><?php echo $row['email']; ?></td>
-		<td><?php echo $row['date']; ?></td>
-	</tr>
-	<?php } // end foreach ?>
-</table>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Email</th>
+			<th>Date</th>
+		</tr>
+		<?php foreach ($table as $row) { ?>
+		<tr>
+			<td><?php echo $row['id']; ?></td>
+			<td><?php echo $row['name']; ?></td>
+			<td><?php echo $row['email']; ?></td>
+			<td><?php echo $row['date']; ?></td>
+		</tr>
+		<?php } // end foreach ?>
+	</table>
 </body>
 </html>
