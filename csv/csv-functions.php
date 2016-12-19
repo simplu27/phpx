@@ -12,18 +12,24 @@
 // Exemplu:
 // $filename1 = 'users.csv';
 // tableFromCsv(filename, daca are titlu, ce separator foloseste)
-// echo tableFromCsv($filename1, $title = true, $separator = '|');
+// echo tableFromCsv($filename1, true, $options[]);
 
-function tableFromCsv($filename, $title = true, $separator = ',') {
+function tableFromCsv($filename, $title = true, $options = null) {
 
 	// verifica daca fisierul exista sau daca poate fi citit
 	if (!file_exists($filename) || !is_readable($filename)) {
 		return false;
 	} else {
+		// Set options for fgetcsv: lenght, delimiter, enclosure, escape
+		// array fgetcsv ( resource $handle [, int $length = 0 [, string $delimiter = "," [, string $enclosure = '"' [, string $escape = "\" ]]]] )
+		$options['lenght'] = (isset($options['lenght'])) ? $options['lenght'] : 0;
+		$options['delimiter'] = (isset($options['delimiter'])) ? $options['delimiter'] : ",";
+		$options['enclosure'] = (isset($options['enclosure'])) ? $options['enclosure'] : '"';
+		$options['escape'] = (isset($options['escape'])) ? $options['escape'] : '\\';
 		// deschide fisierul
 		$file = fopen($filename, 'r');
 		// adauga fiecare linie din csv intr-un array: $rows
-		while (($rows[] = fgetcsv($file, 0, $separator)) !== false) {}
+		while (($rows[] = fgetcsv($file, $options['lenght'], $options['delimiter'], $options['enclosure'], $options['escape'])) !== false) {}
 		// incepem sa construim tabelul
 		$output = "<table>\n<tr>\n";
 		// daca fisierul csv are titlu, se extrage din $rows:
@@ -66,15 +72,21 @@ function tableFromCsv($filename, $title = true, $separator = ',') {
 
 // Functie care extrage datele dintr-un fisier .csv si le asociaza unui array multidimensional
 
-function extractCsv($filename, $title = true, $separator = ','){
+function extractCsv($filename, $title = true, $options = null){
 	// verifica daca fisierul exista sau daca poate fi citit
 	if (!file_exists($filename) || !is_readable($filename)) {
 		return false;
 	} else {
+		// Set options for fgetcsv: lenght, delimiter, enclosure, escape
+		// array fgetcsv ( resource $handle [, int $length = 0 [, string $delimiter = "," [, string $enclosure = '"' [, string $escape = "\" ]]]] )
+		$options['lenght'] = (isset($options['lenght'])) ? $options['lenght'] : 0;
+		$options['delimiter'] = (isset($options['delimiter'])) ? $options['delimiter'] : ",";
+		$options['enclosure'] = (isset($options['enclosure'])) ? $options['enclosure'] : '"';
+		$options['escape'] = (isset($options['escape'])) ? $options['escape'] : '\\';
 		// deschide fisierul
 		$file = fopen($filename, 'r');
 		// adauga fiecare linie din csv intr-un array: $rows
-		while (($rows[] = fgetcsv($file, 0, $separator)) !== false) {}
+		while (($rows[] = fgetcsv($file, $options['lenght'], $options['delimiter'], $options['enclosure'], $options['escape'])) !== false) {}
 		// daca fisierul csv are titlu, se extrage din $rows:
 		if ($title) {
 			// preia primul rand din csv, ca titlu

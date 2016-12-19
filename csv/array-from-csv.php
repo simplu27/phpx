@@ -6,7 +6,14 @@ $filename = 'virgula.csv';
 
 include_once('csv-functions.php');
 
-$table = extractCsv($filename, true, ",");
+// extractCsv(filename, daca are titlu, $options).
+// $options['lenght'] =  : 0;
+// $options['delimiter'] =  ",";
+// $options['enclosure'] =  '"';
+// $options['escape'] =  '\\';
+
+$options['delimiter'] = ",";
+$table = extractCsv($filename, true, $options);
 
 ?>
 <!DOCTYPE html>

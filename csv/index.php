@@ -11,12 +11,13 @@ include_once('csv-functions.php');
 
 // Testeaza generarea de tabel din fisier .csv
 
-// tableFromCsv(filename, daca are titlu, ce separator foloseste)
-echo tableFromCsv($filename1, $title = true, $separator = '|');
+// tableFromCsv(filename, daca are titlu, ce separator foloseste).
+$options['delimiter'] = "|";
+echo tableFromCsv($filename1, true, $options);
 
 // Testeaza csv to array
-
-$data = extractCsv('virgula.csv', $title=true, $separator = ",");
+$options['delimiter'] = ",";
+$data = extractCsv('virgula.csv', true, $options);
 
 echo "<pre>";
 	var_dump($data);
