@@ -25,9 +25,9 @@ if (isset($_GET['sort'])) {
 		$mesaj = "Sorteaza pret descrescator!";
 
 		usort($produse, function ($item1, $item2) {
-	   		if ($item1['pret'] == $item2['pret']) return 0;
-	    	// Sorteaza in functie de pret [descrescator]
-	    	return $item1['pret'] > $item2['pret'] ? -1 : 1;
+	   		if ($item1['randomNumber'] == $item2['randomNumber']) return 0;
+	    	// Sorteaza in functie de randomNumber [descrescator]
+	    	return $item1['randomNumber'] > $item2['randomNumber'] ? -1 : 1;
 		});
 
 	} elseif (in_array($getsort, $sort) AND $getsort === "asc") {
