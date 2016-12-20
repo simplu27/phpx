@@ -103,5 +103,8 @@ function extractCsv($filename, $title = true, $options = null){
 			// Daca nu exista titlu, returneaza $rows
 			return $rows;
 		}
+
+		// inchide fisierul
+		fclose($file);
 	}
 }
