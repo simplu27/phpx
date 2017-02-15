@@ -22,3 +22,13 @@ echo escape($string);
 
 // RETURN:
 // String plus &lt;script&gt;alert(&#039;Hello&#039;)&lt;/script&gt;
+
+echo "<br>\n";
+
+$franceza_caractere = "à, é, ç, ô, û, ê";
+
+echo "htmlspecialchars: " . htmlspecialchars($franceza_caractere);
+echo "<br>\n";
+echo "htmlentities: " . htmlentities($franceza_caractere);
+echo "<br>\n";
+
