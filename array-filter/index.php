@@ -79,6 +79,15 @@ echo "<pre>";
 echo "</pre>";
 
 
+reset($produse);
+
+echo "<h1>Array initial reset</h1>";
+
+echo "<pre>";
+	var_dump($produse);
+echo "</pre>";
+
+
 
 
 
