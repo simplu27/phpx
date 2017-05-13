@@ -115,7 +115,12 @@ echo "<pre>";
 	var_dump($produse);
 echo "</pre>";
 
+$new = array_values($produse);
 
+echo "<h1>array_values</h1>";
+echo "<pre>";
+	var_dump($new);
+echo "</pre>";
 
 
 
