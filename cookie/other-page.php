@@ -1,5 +1,6 @@
 <?php
 
+
 if (isset($_COOKIE['fabrica'])) {
 	$fabrica = $_COOKIE['fabrica'];
 	echo "Cookie fabrica is: " . $fabrica . '<br>';
